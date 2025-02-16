@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+import SlideShow from './components/slide-show'
 
 export default function Home() {
   return (
     <>
       <header className="flex gap-12 my-12 mx-auto w-[90%] max-w-[75rem]">
-        <div className="w-160 h-100"></div>
+        <div className="w-160 h-100">
+          <SlideShow />
+        </div>
         <div>
           <div className="text-2xl">
             <h1

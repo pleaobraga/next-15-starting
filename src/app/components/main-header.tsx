@@ -9,7 +9,7 @@ export default function MainHeader() {
   return (
     <>
       <MainHeaderBackground />
-      <header className="flex justify-between items-center py-8 px-4 sm:px-[10%]">
+      <header className="flex justify-between items-center py-15 px-4 sm:px-[10%]">
         <Link
           className="flex items-center justify-center gap-8  no-underline font-bold font-montserrat text-2xl tracking-widest uppercase"
           href="/"
