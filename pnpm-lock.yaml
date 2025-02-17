@@ -33,6 +33,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.0
         version: 4.0.0
+      '@types/better-sqlite3':
+        specifier: ^7.6.12
+        version: 7.6.12
       '@types/node':
         specifier: ^20
         version: 20.17.19
@@ -387,6 +390,9 @@ packages:
 
   '@tailwindcss/postcss@4.0.0':
     resolution: {integrity: sha512-lI2bPk4TvwavHdehjr5WiC6HnZ59hacM6ySEo4RM/H7tsjWd8JpqiNW9ThH7rO/yKtrn4mGBoXshpvn8clXjPg==}
+
+  '@types/better-sqlite3@7.6.12':
+    resolution: {integrity: sha512-fnQmj8lELIj7BSrZQAdBMHEHX8OZLYIHXqAKT1O7tDfLxaINzf00PMjw22r3N/xXh0w/sGHlO6SVaCQ2mj78lg==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -1997,6 +2003,10 @@ snapshots:
       lightningcss: 1.29.1
       postcss: 8.5.2
       tailwindcss: 4.0.0
+
+  '@types/better-sqlite3@7.6.12':
+    dependencies:
+      '@types/node': 20.17.19
 
   '@types/estree@1.0.6': {}
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const sql = require('better-sqlite3');
 const db = sql('meals.db');
 

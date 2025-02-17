@@ -1,8 +1,19 @@
 import Link from 'next/link'
 
+import { getMeals } from '@/lib/meals'
+import { Meal } from './components/meal-item'
+import { twMerge } from 'tailwind-merge'
+import { Suspense } from 'react'
 import MealsGrid from './components/meals-grid'
+import MealsLoading from './components/meals-loading'
 
-export default function Meal() {
+async function Meals() {
+  const meals = (await getMeals()) as Meal[]
+
+  return <MealsGrid meals={meals} />
+}
+
+export default function MealPage() {
   return (
     <>
       <header className="gap-12 mx-auto mt-12 mb-20 max-w-[75rem] text-2xl">
@@ -18,7 +29,11 @@ export default function Meal() {
         </p>
         <p>
           <Link
-            className="inline-block mt-4 px-4 py-2 rounded-lg text-white font-bold no-underline bg-linear-to-r from-orange-600 to-yellow-300"
+            className={twMerge(
+              'inline-block mt-4 px-4 py-2 rounded-lg text-white font-bold no-underline',
+              'bg-linear-to-r from-orange-600 to-yellow-300',
+              'hover:from-orange-700 hover:to-yellow-400 '
+            )}
             href="/meals/share"
           >
             Share your favorite Recipe
@@ -26,7 +41,9 @@ export default function Meal() {
         </p>
       </header>
       <main>
-        <MealsGrid meals={[]} />
+        <Suspense fallback={<MealsLoading />}>
+          <Meals />
+        </Suspense>
       </main>
     </>
   )

@@ -1,14 +1,7 @@
-import MealItem from './meal-item'
+import MealItem, { Meal } from './meal-item'
 
 type Props = {
-  meals: {
-    id: string
-    title: string
-    slug: string
-    image: string
-    summary: string
-    creator: string
-  }[]
+  meals: Meal[]
 }
 
 export default function MealsGrid({ meals }: Props) {
