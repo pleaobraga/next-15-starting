@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
 import { getMeals } from '@/lib/meals'
-import { Meal } from './components/meal-item'
 import { twMerge } from 'tailwind-merge'
 import { Suspense } from 'react'
 import MealsGrid from './components/meals-grid'
 import MealsLoading from './components/meals-loading'
+import { Meal } from './types'
 
 async function Meals() {
   const meals = (await getMeals()) as Meal[]

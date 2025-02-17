@@ -1,4 +1,5 @@
-import MealItem, { Meal } from './meal-item'
+import { Meal } from '../types'
+import MealItem from './meal-item'
 
 type Props = {
   meals: Meal[]

@@ -12,16 +12,12 @@ type Meal = {
   image: string
 }
 
-export default async function MealDetail({
-  params,
-}: {
-  params: {
-    mealSlug: string
-  }
-}) {
-  const { mealSlug } = await params
+type Props = {
+  params: Promise<{ mealSlug: string }>
+}
 
-  console.log('mealSlug', mealSlug)
+export default async function MealDetail({ params }: Props) {
+  const { mealSlug } = await params
 
   const meal = (await getMeal(mealSlug)) as Meal
 

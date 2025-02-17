@@ -2,15 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { twMerge } from 'tailwind-merge'
+import { Meal } from '../types'
 
-export type Meal = {
-  title: string
-  slug: string
-  image: string
-  summary: string
-  creator: string
-  id: string
-}
+export type Props = Omit<Meal, 'id' | 'creator_email' | 'instructions'>
 
 export default function MealItem({
   title,
@@ -18,7 +12,7 @@ export default function MealItem({
   image,
   summary,
   creator,
-}: Meal) {
+}: Props) {
   return (
     <article
       className={twMerge(
@@ -32,7 +26,7 @@ export default function MealItem({
         <div className="relative h-60">
           <Image
             className="object-cover"
-            src={image}
+            src={image as string}
             alt={title}
             fill
           />
